@@ -55,13 +55,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChromeLogin.cs" />
-    <Compile Include="firefoxLogin.cs" />
+    <Compile Include="Browsers\Base.cs" />
+    <Compile Include="Browsers\Chrome.cs" />
+    <Compile Include="TestCase\ChromeLogin.cs" />
+    <Compile Include="Browsers\FireFox.cs" />
+    <Compile Include="TestCase\firefoxLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
