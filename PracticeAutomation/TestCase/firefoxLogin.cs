@@ -10,6 +10,7 @@ namespace PracticeAutomation
     {
        public FirefoxLogin()
         {
+
             Driver = new FirefoxDriver();
         }
 
@@ -23,7 +24,9 @@ namespace PracticeAutomation
             Driver.FindElement(By.Id("loginbutton")).Click();
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
-
+            Driver.FindElement(By.Id("pageLoginAnchor")).Click();
+            Driver.Quit();
+            
         }
     }
 }
