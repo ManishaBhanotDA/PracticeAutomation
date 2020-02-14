@@ -56,14 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Browsers\Base.cs" />
-    <Compile Include="Browsers\Chrome.cs" />
+    <Compile Include="Browsers\IBase.cs" />
     <Compile Include="TestCase\ChromeLogin.cs" />
-    <Compile Include="Browsers\FireFox.cs" />
     <Compile Include="TestCase\firefoxLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

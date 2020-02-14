@@ -6,24 +6,31 @@ namespace PracticeAutomation
 {
 
     [TestFixture]
-    [Parallelizable]
-    public  class FB : Chrome
+   
+    public class FB : Base
     {
       
+        new IWebDriver Driver = new ChromeDriver();
+
+        public FB(IWebDriver driver) : base(driver)
+        {
+        }
+
         [Test]
         public void Login()
         {
             Driver.Navigate().GoToUrl("http://www.facebook.com");
-            Driver.Manage().Window.Maximize();
+            var b = new Base(Driver);
+            b.SetWindow();
+           // b.ScrollDown();
+
             Driver.FindElement(By.Name("email")).SendKeys("manishabhanot96@gmail.com");
             Driver.FindElement(By.Name("pass")).SendKeys("kudrat123");
             Driver.FindElement(By.Id("loginbutton")).Click();
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
-            //Driver.FindElement(By.Id("pageLoginAnchor")).Click();
-            
+            Driver.FindElement(By.Id("pageLoginAnchor")).Click();
         }
 
-        
+      
     }
+
 }
